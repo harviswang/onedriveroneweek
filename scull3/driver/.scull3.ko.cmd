@@ -1,0 +1,1 @@
+cmd_/development/onedriveroneweek/scull3/driver/scull3.ko := arm-linux-ld -EL -r  -T /development/mini2440/linux-2.6.32.2/scripts/module-common.lds --build-id -o /development/onedriveroneweek/scull3/driver/scull3.ko /development/onedriveroneweek/scull3/driver/scull3.o /development/onedriveroneweek/scull3/driver/scull3.mod.o

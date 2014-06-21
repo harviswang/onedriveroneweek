@@ -1,0 +1,12 @@
+obj-m := hello.o
+KERNELDIR := /development/linux-2.6.32.2
+PWD := $(shell pwd)
+
+modules:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+
+.PHONEY: clean
+clean:
+	rm -f hello.mod.c  hello.o   modules.order
+	rm -f hello.ko  hello.mod.o    Module.symvers
+

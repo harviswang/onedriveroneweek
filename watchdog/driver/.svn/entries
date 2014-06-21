@@ -1,0 +1,93 @@
+8
+
+dir
+0
+https://onedriveroneweek.googlecode.com/svn/trunk/watchdog/driver
+https://onedriveroneweek.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+watchdog.mod.c
+file
+
+
+
+add
+
+watchdog.c
+file
+
+
+
+add
+
+modules.order
+file
+
+
+
+add
+
+.tmp_versions
+dir
+
+
+
+add
+
+.watchdog.ko.cmd
+file
+
+
+
+add
+
+watchdog.ko
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+.watchdog.mod.o.cmd
+file
+
+
+
+add
+
+Module.symvers
+file
+
+
+
+add
+
+.watchdog.o.cmd
+file
+
+
+
+add
+
+Makefile
+file
+
+
+
+add
+

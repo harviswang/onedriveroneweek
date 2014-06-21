@@ -1,0 +1,93 @@
+8
+
+dir
+0
+https://onedriveroneweek.googlecode.com/svn/trunk/rtc/driver
+https://onedriveroneweek.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+.rtc.ko.cmd
+file
+
+
+
+add
+
+rtc.ko
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+modules.order
+file
+
+
+
+add
+
+.rtc.mod.o.cmd
+file
+
+
+
+add
+
+.rtc.o.cmd
+file
+
+
+
+add
+
+.tmp_versions
+dir
+
+
+
+add
+
+rtc.mod.c
+file
+
+
+
+add
+
+rtc.c
+file
+
+
+
+add
+
+Module.symvers
+file
+
+
+
+add
+
+Makefile
+file
+
+
+
+add
+

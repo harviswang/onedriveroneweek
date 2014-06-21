@@ -1,0 +1,93 @@
+8
+
+dir
+0
+https://onedriveroneweek.googlecode.com/svn/trunk/adc/driver
+https://onedriveroneweek.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+.adc.ko.cmd
+file
+
+
+
+add
+
+adc.ko
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+.adc.mod.o.cmd
+file
+
+
+
+add
+
+modules.order
+file
+
+
+
+add
+
+.adc.o.cmd
+file
+
+
+
+add
+
+adc.mod.c
+file
+
+
+
+add
+
+.tmp_versions
+dir
+
+
+
+add
+
+adc.c
+file
+
+
+
+add
+
+Module.symvers
+file
+
+
+
+add
+
+Makefile
+file
+
+
+
+add
+

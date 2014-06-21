@@ -1,0 +1,1 @@
+cmd_/development/onedriveroneweek/rtc/driver/rtc.ko := arm-linux-ld -EL -r  -T /development/mini2440/linux-2.6.32.2/scripts/module-common.lds --build-id -o /development/onedriveroneweek/rtc/driver/rtc.ko /development/onedriveroneweek/rtc/driver/rtc.o /development/onedriveroneweek/rtc/driver/rtc.mod.o

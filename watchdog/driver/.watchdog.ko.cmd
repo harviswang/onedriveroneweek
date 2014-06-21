@@ -1,0 +1,1 @@
+cmd_/development/onedriveroneweek/watchdog/driver/watchdog.ko := arm-linux-ld -EL -r  -T /development/mini2440/linux-2.6.32.2/scripts/module-common.lds --build-id -o /development/onedriveroneweek/watchdog/driver/watchdog.ko /development/onedriveroneweek/watchdog/driver/watchdog.o /development/onedriveroneweek/watchdog/driver/watchdog.mod.o

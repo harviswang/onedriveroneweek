@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/2/trunk/hello/driver
+END
+.hello.o.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/hello/driver/.hello.o.cmd
+END
+hello.mod.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/hello/driver/hello.mod.c
+END
+modules.order
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/hello/driver/modules.order
+END
+hello.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/2/trunk/hello/driver/hello.c
+END
+.hello.ko.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/hello/driver/.hello.ko.cmd
+END
+hello.ko
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/hello/driver/hello.ko
+END
+Module.symvers
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/hello/driver/Module.symvers
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/hello/driver/Makefile
+END
+.hello.mod.o.cmd
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/hello/driver/.hello.mod.o.cmd
+END
