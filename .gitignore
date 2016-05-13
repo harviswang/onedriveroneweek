@@ -3,5 +3,8 @@
 *.o
 *.mod.c
 *.mod.o
+*.o.cmd
+*.ko.cmd
+*.tmp_versions/
 modules.order
 Module.symvers

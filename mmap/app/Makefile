@@ -1,7 +1,7 @@
-all: unit-test
+all: mmap_unit_test
 
-unit-test: unit-test.c
-	arm-linux-gcc unit-test.c -o unit-test
+mmap_unit_test: mmap_unit_test.c
+	$(CC) -Wall mmap_unit_test.c
 
 clean:
-	rm -f unit-test unit-test.o
+	rm -f a.out

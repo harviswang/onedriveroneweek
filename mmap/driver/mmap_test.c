@@ -19,7 +19,7 @@
 #define DEVICE_NAME "mymmap"
 
 static unsigned char array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-static unsinged char *buffer;
+static unsigned char *buffer;
 
 static int my_open(struct inode *indoe, struct file *filp)
 {
@@ -42,7 +42,7 @@ static int my_mmap(struct file *filp, struct vm_area_struct *vma)
 	page = virt_to_phys(buffer);
 
 	/*  */
-	err = remap_pfn_range(vma, start, page >> PAGE_SHIFT, size, PAGE_SHARED));
+	err = remap_pfn_range(vma, vma->vm_start, page >> PAGE_SHIFT, size, PAGE_SHARED);
 	if (err) {
 		printk(KERN_ERR "remap_pfn_range() failed\n");
 		return -1;
@@ -86,7 +86,7 @@ static int __init dev_init(void)
 		} else {
 			/* set the malloced memory as reserved */
 			SetPageReserved(virt_to_page(buffer));
-			reutnr err;
+			return err;
 		}
 	}
 }
@@ -96,7 +96,7 @@ static void __exit dev_exit(void)
 	int err;
 
 	/* deregister misc device */
-	ret = misc_deregister(&misc);
+	err = misc_deregister(&misc);
 	if (err) {
 		printk(KERN_ERR "misc_deregister() failed\n");
 	} else {
@@ -104,7 +104,9 @@ static void __exit dev_exit(void)
 		ClearPageReserved(virt_to_page(buffer));
 
 		/* free malloced memory */
-		free(buffer);
+		if (buffer != NULL) {
+		    kfree(buffer);
+		}
 		buffer = NULL;
 	}
 }

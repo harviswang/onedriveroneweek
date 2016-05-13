@@ -1,5 +1,5 @@
 obj-m := hello.o
-KERNELDIR := /development/mini2440/linux-2.6.32.2
+KERNELDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
 modules:
