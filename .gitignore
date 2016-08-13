@@ -1,3 +1,8 @@
+@
+export_syms
+machine
+x86
+*.swp
 *.out
 *.ko
 *.o
