@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	/* open device */
 	fd = open("/dev/mymmap", O_RDWR);
 	if (fd < 0) {
-		perror("open() failed\n");
+		perror("open() failed");
 		return errno;
 	} else {
 		/* map memory */

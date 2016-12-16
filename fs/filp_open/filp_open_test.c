@@ -10,9 +10,11 @@
 #include <asm/uaccess.h>
 
 #define SIZE 64
+static char *file_name = "/usr/share/hwdata/usb.ids";
+module_param(file_name, charp, S_IRUGO | S_IWUSR);
+
 int filp_test_entry(void)
 {
-    char *file_name = "/usr/share/hwdata/usb.ids";
     struct file *filp = NULL;
     mm_segment_t old_fs;
     char buff[SIZE + 1] = {0};
