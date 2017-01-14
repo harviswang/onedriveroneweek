@@ -5,21 +5,43 @@
 #include <linux/fs.h>  
 #include <linux/completion.h>  
 #include <linux/miscdevice.h>
-#include <linux/stat.h>
+#include <linux/stat.h>  /* S_IRUGO/S_IWUGO */
+#include <asm/uaccess.h> /* copy_to_user/copy_from_user */
+#include <linux/string.h>
 
+#define BUFFER_SIZE 128
 #define COMPLETE_DEV_NAME "completion"
 DECLARE_COMPLETION(comp);
+static char completion_buffer[BUFFER_SIZE] = { 0 };
+static unsigned int read_index = 0;
+static unsigned int write_index = 0;
 
 ssize_t completion_read(struct file *filp, char __user *buf, size_t count, loff_t *pos)
 {
     printk(KERN_ERR "process %i (%s) going to sleep\n", current->pid, current->comm);
     wait_for_completion(&comp);
+    if (copy_to_user(buf, &completion_buffer[read_index], count)) {
+        printk(KERN_ERR "copy_to_user failed\n");
+    } else {
+        read_index += count;
+        if (read_index >= BUFFER_SIZE) {
+            read_index %= BUFFER_SIZE;
+        }
+    }
     printk(KERN_ERR "awoken %i (%s)\n", current->pid, current->comm);
-    return 0;
+    return count;
 }
 
 ssize_t completion_write(struct file *filp, const char __user *buf, size_t count, loff_t *pos)
 {
+    if (copy_from_user(&completion_buffer[write_index], buf, count)) {
+        printk(KERN_ERR "copy_from_user failed\n");
+    } else {
+        write_index += count;
+        if (write_index >= BUFFER_SIZE) {
+            write_index %= BUFFER_SIZE;
+        }
+    }
     printk(KERN_ERR "process %i (%s) awakening the readers...\n", current->pid, current->comm);
     complete(&comp);
     return count;
